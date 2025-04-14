@@ -1,1 +1,1 @@
-Just a small web projecr to test your basic physics knowledge
+Just a small web project to test your basic physics knowledge
