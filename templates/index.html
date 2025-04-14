@@ -1,0 +1,103 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Некоторые физические законы и их примечательные следствия
+{% endblock %}
+
+{% block page-lead %}
+Это сайт для повторения физики, а также тестирования по полученным знаниям. <br/>
+Сделан на основании страницы проекта для изучения математики.
+
+{% endblock %}
+
+{% block content %}<!-- Не забудь, что это работает, только если подключён materialize.min.css -->
+
+<div class="container" id="project-contents">
+  <h4 class="center-align">Содержание</h4>
+  
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Список вопросов</span>
+          <p>Здесь находится список вопросов и ответов на них, которые затем представляются в тесте.</p>
+        </div>
+        <div class="card-action">
+          <a href="/questions-list" class="btn blue">Изучить вопросы</a>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Форма для добавления вопроса</span>
+          <p>Если представленных вопросов показалось мало, добавьте свои.</p>
+        </div>
+        <div class="card-action">
+          <a href="/add-question" class="btn green">Добавить вопрос</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Тест</span>
+            <p>Хотите пройти тест по изученным знаниям? Вперёд!</p>
+          </div>
+          <div class="card-action">
+            <a href="/test" class="btn blue">Пройти тест</a>
+          </div>
+        </div>
+    </div>
+      
+    <div class="col s12 m6">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Общая статистика</span>
+            <p>Выжимка, включающая информацию по пройденным тестам</p>
+          </div>
+          <div class="card-action">
+            <a href="/stats" class="btn green">Открыть статистику</a>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+<!-- 
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Тест</h3>
+                <p>Хотите пройти тест по изученным знаниям? Вперёд!</p>
+                <a href="/stats" class="btn btn-primary">
+                    Пройти тест
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Общая статистика</h3>
+                <p>Общай статистика, включающая информацию по пройденным тестам</p>
+                <a href="/stats" class="btn btn-primary">
+                    Изучить
+                </a>
+            </div>
+        </div>
+    </div>
+</div> -->
+{% endblock %}

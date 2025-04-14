@@ -1,0 +1,23 @@
+{% extends "base_page.html" %}
+{% block pagetitle %}Результаты теста{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-4">Результаты теста</h2>
+
+    {% for item in user_answers %}
+        <div class="mb-4 p-3 border rounded {% if item.is_correct %}bg-light{% else %}bg-warning-subtle{% endif %}">
+            <p><strong>Вопрос {{ forloop.counter }}:</strong> {{ item.question }}</p>
+            <p><strong>Ваш ответ:</strong> {{ item.user_answer }}</p>
+            <p><strong>Правильный ответ:</strong> {{ item.correct_answer }}</p>
+            {% if item.is_correct %}
+                <p class="text-success">Верно</p>
+            {% else %}
+                <p class="text-danger">Неверно</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <hr>
+    <h4 class="mt-4">Результат: {{ correct_count }}/{{ total }}</h4>
+</div>
+{% endblock %}

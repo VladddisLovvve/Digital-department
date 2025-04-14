@@ -1,0 +1,48 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Некоторая статистика по вопросам
+{% endblock %}
+
+{% block page-lead %}
+Ниже приведены некоторые статистики на основании страницы с вопросами
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="stats">
+    <div>
+        <h3 class="py-2">Количество вопросов</h3>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ quests_all }}</h4>
+            <p class="text-muted">прямо сейчас</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ quests_own }}</h4>
+            <p class="text-muted">было изначально</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ quests_added }}</h4>
+            <p class="text-muted">добавленных пользователем через <a href="/add-quest">форму</a></p>
+        </div>
+    </div>
+    <div>
+        <h3 class="py-2">Ответы</h3>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ words_avg }}</h4>
+            <p class="text-muted">слов в среднем</p>
+        </div>
+        <div class="col-sm-4">
+            <h4>{{ words_max }}</h4>
+            <p class="text-muted">максимум</p>
+        </div>
+        <div class="col-sm-4">
+            <h4>{{ words_min }}</h4>
+            <p class="text-muted">минимум</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Добавить свой вопрос
+{% endblock %}
+
+{% block page-lead %}
+Введите Ваши вопросы в поля ниже. <br/>
+Ваши вопросы добавятся в конец существующего списка вопросов.
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="quest-form">
+    <form method="post">
+        <div class="row px-5 py-2">
+            <h3>Ваше имя или псевдоним</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-6">
+                <label for="name">Ваше имя:</label>
+                <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Марк" value required>
+            </div>
+            <div class="col-md-6">
+                <label for="email">Ваша фамилия:</label>
+                <input type="text" class="form-control input-lg" name="surname" id="surname" placeholder="Аврелий" value required>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <h3>Ваш вопрос</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-4">
+                <label for="new_quest">Вопрос</label>
+                <input type="text" class="form-control input-lg" name="new_quest" id="new_quest">
+            </div>
+            <div class="col-md-8">
+                <label for="new_answer">Ответ к нему</label>
+                <textarea type="text" class="form-control input-lg" name="new_answer" id="new_answer" aria-describedby="answer_note" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <button type="submit" class="btn btn-primary" formaction="/send-question">Добавить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

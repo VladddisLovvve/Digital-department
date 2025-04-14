@@ -1,0 +1,18 @@
+{% extends "base_page.html" %}
+{% block pagetitle %}Тест{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-4">Тест по вопросам</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <div class="mb-4">
+                <label class="form-label fw-bold">{{ forloop.counter }}. {{ question }}</label>
+                <input type="text" class="form-control" name="answer_{{ forloop.counter }}" placeholder="Введите ответ">
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-success" formaction="/test-results">Проверить ответы</button>
+    </form>
+</div>
+{% endblock %}
