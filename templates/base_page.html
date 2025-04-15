@@ -5,7 +5,9 @@
     <title>{% block pagetitle %}{% endblock %}</title>
     <!-- load static -->
     {% load static %}
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
     <link href="{% static 'materialize.min.css' %}" rel="stylesheet">
 </head>
 <body>
