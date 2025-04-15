@@ -16,13 +16,13 @@ def add_quest(new_quest, new_answer):
         title = existing_quests[0]
         old_quest = existing_quests[1:]
     quests_sorted = old_quest + [new_quest_line]
-    db_quests = [title] + quests_sorted
+    initial_quests = [title] + quests_sorted
     with open("./data/quests.csv", "w", encoding="utf-8") as f:
-        f.write("\n".join(db_quests))
+        f.write("\n".join(initial_quests))
 
 
 def get_quests_stats():
-    db_quests = 0
+    initial_quests = 0
     user_quests = 0
     answer_len = []
     with open("./data/quests.csv", "r", encoding="utf-8") as f:
@@ -32,11 +32,11 @@ def get_quests_stats():
             answer_len.append(len(words))
             if "user" in added_by:
                 user_quests += 1
-            elif "db" in added_by:
-                db_quests += 1
+            elif "initial" in added_by:
+                initial_quests += 1
     stats = {
-        "quests_all": db_quests + user_quests,
-        "quests_own": db_quests,
+        "quests_all": initial_quests + user_quests,
+        "quests_own": initial_quests,
         "quests_added": user_quests,
         "words_avg": round(sum(answer_len)/len(answer_len)),
         "words_max": max(answer_len),
